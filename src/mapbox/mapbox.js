@@ -88,7 +88,7 @@ export function getAccessToken() {
 
   if (!accessToken && typeof process !== 'undefined') {
     // Note: This depends on bundler plugins (e.g. webpack) inmporting environment correctly
-    accessToken = accessToken || process.env.MapboxAccessToken; // eslint-disable-line
+    accessToken = accessToken || process.env.MapboxAccessToken || process.env.REACT_APP_MapboxAccessToken; // eslint-disable-line
   }
 
   return accessToken || null;
